@@ -1,0 +1,11 @@
+@import "variables";
+
+@mixin basic-button() {
+  font-size: $button-font-size;
+  border-radius: $button-radius;
+  font-weight: $button-font-weight;
+  padding: $button-padding;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

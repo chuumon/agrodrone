@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>ДронАгроСкай</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="styles/style.scss" rel="stylesheet"/>
+  </head>
+  <body>
+    <header class="header">
+      <div class="burger">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+      </div>
+
+      <img class="header__logo" src="assets/logo.svg">
+
+      <div class="header__nav-wrapper">
+        <nav class="header__nav">
+          <a class="header__nav-link" href="#main">Головна</a>
+          <a class="header__nav-link" href="#about-us">Про нас</a>
+          <a class="header__nav-link" href="#services">Послуги</a>
+          <a class="header__nav-link" href="#contacts">Контакти</a>
+        </nav>
+
+        <button id="contact-popup-trigger" class="header__nav-button">
+          <svg viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.9648 13.8555L17.1211 17.4062C17.0156 17.9336 16.5938 18.2852 16.0664 18.2852C7.20703 18.25 0 11.043 0 2.18359C0 1.65625 0.316406 1.23438 0.84375 1.12891L4.39453 0.285156C4.88672 0.179688 5.41406 0.460938 5.625 0.917969L7.27734 4.75C7.45312 5.20703 7.34766 5.73438 6.96094 6.01562L5.0625 7.5625C6.25781 9.98828 8.22656 11.957 10.6875 13.1523L12.2344 11.2539C12.5156 10.9023 13.043 10.7617 13.5 10.9375L17.332 12.5898C17.7891 12.8359 18.0703 13.3633 17.9648 13.8555Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section id="main" class="main">
+      <div class="main__info" data-aos="fade-up">
+        <h1 class="main__title">Збільшуйте свою продуктивність за допомогою агродронів</h1>
+        <p class="main__subtitle">Купуйте дрон у нас - отримайте і дрон, <br/> і наш досвід</p>
+
+        <button class="main__button">Отримати консультацію</button>
+      </div>
+
+      <img class="main__drone" src="assets/banner-drone.png" alt="АгроДрон" data-aos="fade-left">
+      <img class="main__drone--mobile" src="assets/banner-drone-mobile.png" alt="АгроДрон">
+      <img class="main__bottom" src="assets/banner-bottom.svg">
+    </section>
+
+    <section id="about-us" class="about-us">
+      <h2 class="about-us__title">Скорочуємо витрати, зберігаємо врожай, підвищуємо дохідність з кожного гектара</h2>
+      <p class="about-us__subtitle">Використовуючи наш 5-річний досвід і революційні технології, ми пропонуємо безпечні та стійкі екологічні рішення, здатні забезпечувати конкурентно кращі результати, з економією ваших активів та часу.</p>
+
+      <div class="about-us__cards">
+        <div class="about-us__cards-row">
+          <div class="about-us__card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200">
+            <div class="about-us__card-title">5</div>
+            <div class="about-us__card-hint">Років обробляємо поля агродронами</div>
+          </div>
+
+          <div class="about-us__card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200">
+            <div class="about-us__card-title">25</div>
+            <div class="about-us__card-hint">Екіпажів під брендом AgroDron</div>
+          </div>
+        </div>
+
+        <div class="about-us__cards-row">
+          <div class="about-us__card" data-aos="flip-right" data-aos-duration="500" data-aos-delay="200">
+            <div class="about-us__card-title">3 000</div>
+            <div class="about-us__card-hint">Гектарів можемо обробити
+              за день</div>
+          </div>
+
+          <div class="about-us__card" data-aos="flip-right" data-aos-duration="500" data-aos-delay="200">
+            <div class="about-us__card-title">130 000</div>
+            <div class="about-us__card-hint">Гектарів обробляємо щорічно</div>
+          </div>
+        </div>
+      </div>
+
+      <img class="about-us__drone" src="assets/preferences-drone.png" alt="">
+      <img class="about-us__dots" src="assets/preferences-dots.png" alt="">
+    </section>
+
+    <section id="consultation" class="consultation">
+      <img class="consultation__farmer" src="assets/consultation-farmer.png" alt="" data-aos="fade-right" data-aos-delay="200">
+
+      <div class="consultation__form-wrapper" data-aos="zoom-in-up" data-aos-delay="200">
+        <h3 class="consultation__title">Потрібна Консультація?</h3>
+        <p class="consultation__subtitle">Заповніть форму та наш консультант зв’яжеться з вами протягом години.</p>
+
+        <form class="consultation__form">
+          <div class="consultation__fields">
+            <div class="consultation__field">
+              <label class="consultation__label" for="name">Ім'я:</label>
+              <input class="consultation__input" name="name" id="name" type="text" maxlength="50" placeholder="Введіть Ваше ім'я" required>
+            </div>
+
+            <div class="consultation__field">
+              <label class="consultation__label" for="tel">Номер телефону:</label>
+              <input class="consultation__input" name="tel" id="tel" type="text" required>
+            </div>
+          </div>
+
+          <button class="consultation__button" type="submit">Отримати консультацію</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2 class="services__title">Продаж <span class="highlighted">дронів</span> аграрного призначення</h2>
+      <p class="services__subtitle">Наші дрони виготовлені з авіаційного алюмінію, вуглецевого волокна і частково з карбону. Всі матеріали роблять дрон легким та мобільним. </p>
+
+      <div class="services__cards">
+        <div class="services__card" data-aos="flip-left">
+          <img class="services__card-image" src="assets/use-cases-image-1.png" alt="Обприскування полів дронами">
+          <p class="services__card-title">Обприскування полів дронами</p>
+          <p class="services__card-text">Максимально точне внесення засобів захисту рослин.</p>
+
+          <button class="services__card-button">Консультація</button>
+        </div>
+
+        <div class="services__card" data-aos="flip-left">
+          <img class="services__card-image" src="assets/use-cases-image-2.png" alt="Карти Внесення ЗЗР">
+          <p class="services__card-title">Карти Внесення ЗЗР</p>
+          <p class="services__card-text">Внесення засобів захисту рослин (ЗЗР) за допомогою дронів є більш точним порівняно з традиційними способами внесення.</p>
+
+          <button class="services__card-button">Консультація</button>
+        </div>
+
+        <div class="services__card" data-aos="flip-left">
+          <img class="services__card-image" src="assets/use-cases-image-3.png" alt="Десикація рослин">
+          <p class="services__card-title">Десикація рослин</p>
+          <p class="services__card-text">Зробивши десикацію вчасно, ви зберігаєте свій врожай.</p>
+
+          <button class="services__card-button">Консультація</button>
+        </div>
+
+        <div class="services__card" data-aos="flip-left">
+          <img class="services__card-image" src="assets/use-cases-image-4.png" alt="Посів дрібнонасінневих культур">
+          <p class="services__card-title">Посів дрібнонасінневих культур</p>
+          <p class="services__card-text">Дає змогу боротися з понад 70 видами шкідників і є екологічно чистим видом обробки.</p>
+
+          <button class="services__card-button">Консультація</button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contacts" class="footer">
+      <div class="footer__info">
+        <img class="footer__logo" src="assets/logo.svg" alt="ДронАгроСкай">
+
+        <div class="footer__contacts contacts">
+          <p class="contacts__title">Контактна інформація:</p>
+
+          <a class="contacts__contact" href="tel:+38 066 123 45 67"><img src="assets/phone.svg" alt="Телефон"> +38 066 123 45 67</a>
+          <a class="contacts__contact" href="mailto:service@mail.com"><img src="assets/envelope.svg" alt="Емейл"> service@mail.com</a>
+          <p class="contacts__contact"><img src="assets/map-marker.svg" alt="Адреса"> вулиця Бориса Мозолевського, 15</p>
+
+          <button class="contacts__button">Консультація</button>
+        </div>
+      </div>
+
+      <div class="footer__map">
+        <iframe
+          class="footer__map-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2227.4111629325394!2d35.003430307169275!3d48.4017621775927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbfb359a119e05%3A0x8d777b8ec0ec96be!2sVulytsya%20Borysa%20Mozolevs%CA%B9koho%2C%2015%2C%20Dnipro%2C%20Dnipropetrovs&#39;ka%20oblast%2C%2049000!5e0!3m2!1sen!2sua!4v1722939253228!5m2!1sen!2sua"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </footer>
+
+    <div id="contact-popup" class="contact-popup">
+      <a class="contact-popup__tel" href="tel:+38 063 930 07 02"><img src="assets/phone-arrow.svg" alt="Контактний номер"> +38 063 930 07 02</a>
+      <a class="contact-popup__tel" href="tel:+38 067 630 11 19"><img src="assets/phone-arrow.svg" alt="Контактний номер"> +38 067 630 11 19</a>
+
+      <button class="contact-popup__button">Замовити дзвінок</button>
+    </div>
+
+    <div class="burger-menu">
+      <div class="burger-menu__close">✕</div>
+
+      <nav class="burger-menu__nav">
+        <a class="burger-menu__link" href="#main">Головна</a>
+        <a class="burger-menu__link" href="#about-us">Про нас</a>
+        <a class="burger-menu__link" href="#services">Послуги</a>
+        <a class="burger-menu__link" href="#contacts">Контакти</a>
+      </nav>
+
+
+      <div class="contacts">
+        <p class="contacts__title">Контактна інформація:</p>
+
+        <a class="contacts__contact" href="tel:+38 066 123 45 67"><img src="assets/phone.svg" alt="Телефон"> +38 066 123 45 67</a>
+        <a class="contacts__contact" href="mailto:service@mail.com"><img src="assets/envelope.svg" alt="Емейл"> service@mail.com</a>
+        <p class="contacts__contact"><img src="assets/map-marker.svg" alt="Адреса"> вулиця Бориса Мозолевського, 15</p>
+
+        <button class="contacts__button">Консультація</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

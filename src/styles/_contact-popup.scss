@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+.contact-popup {
+  display: flex;
+  width: 15rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: $white;
+  box-shadow: 0 0 16px 0 #00000014;
+  border-radius: 0.5rem;
+
+  &__tel {
+    text-decoration: none;
+    color: $black;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    @include basic-button;
+    background: $green;
+    color: $white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+}
