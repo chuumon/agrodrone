@@ -46,7 +46,7 @@ function onFormSubmit(selector) {
 
         })
         .catch(error => {
-            
+
         });
     })
 }
@@ -54,6 +54,7 @@ function onFormSubmit(selector) {
 function initContactPopup() {
     tippy('#contact-popup-trigger', {
         content: document.getElementById('contact-popup'),
+        trigger: 'click',
         interactive: true,
     });
 }
