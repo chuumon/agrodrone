@@ -41,7 +41,7 @@
     z-index: 100;
   }
 
-  &__drone, &__dots {
+  &__drone, &__drone-bg {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -71,7 +71,7 @@
     }
   }
 
-  &__dots {
+  &__drone-bg {
     width: 80%;
     max-width: 1127px;
 
