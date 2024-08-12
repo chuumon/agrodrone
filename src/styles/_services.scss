@@ -63,6 +63,10 @@
       #{$use-cases}__card-button {
         color: $white;
         box-shadow: 0 4px 64px 0 #F8CF277A;
+
+        &:hover {
+          background-color: $yellow;
+        }
       }
     }
 
@@ -92,12 +96,5 @@
     text-align: center;
     flex-grow: 1;
     min-height: 8.75rem;
-  }
-
-  &__card-button {
-    @include basic-button;
-    background: $yellow;
-    color: $black;
-    transition: all 0.2s ease-in-out;
   }
 }

@@ -120,9 +120,6 @@
   &__input {
     width: 280px;
     height: 54px;
-    padding: 15px 16px 15px 16px;
-    border: 1px solid #F3F3F3;
-    border-radius: 0.5rem;
 
     @media (max-width: 800px) {
       width: 100%;
@@ -130,9 +127,6 @@
   }
 
   &__button {
-    @include basic-button;
-    background: $green;
-    color: $white;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     box-shadow: 0 4px 64px 0 #C4A214;

@@ -79,6 +79,49 @@ h3 {
   }
 }
 
+.button {
+  font-size: $button-font-size;
+  border-radius: $button-radius;
+  font-weight: $button-font-weight;
+  padding: $button-padding;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+
+  &--yellow {
+    background-color: $yellow;
+
+    &:hover {
+      background-color: $yellow3;
+    }
+
+    &:active {
+      background-color: $gray3;
+      color: $yellow;
+    }
+  }
+
+  &--green {
+    background-color: $green;
+    color: $white;
+
+    &:hover {
+      background-color: $green1;
+    }
+  }
+}
+
+.input {
+  padding: 15px 16px 15px 16px;
+  border: 2px solid #F3F3F3;
+  border-radius: 0.5rem;
+  transition: all 100ms ease-in-out;
+
+  &:focus {
+    border: 2px solid $yellow3;
+  }
+}
 
 .contacts {
   display: flex;
@@ -99,8 +142,6 @@ h3 {
   }
 
   &__button {
-    @include basic-button;
-    background: $yellow;
     width: 17.5rem;
   }
 }

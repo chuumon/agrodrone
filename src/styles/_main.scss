@@ -74,8 +74,6 @@
   }
 
   &__button {
-    @include basic-button;
-    background-color: $yellow;
     box-shadow: 0 4px 64px 0 #00000052;
   }
 

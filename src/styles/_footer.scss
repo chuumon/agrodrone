@@ -22,6 +22,11 @@
   &__logo {
     width: 20.3rem;
     margin-bottom: 2rem;
+
+    @media (max-width: 800px) {
+      width: 100%;
+      max-width: 20.3rem;
+    }
   }
 
   &__info {
@@ -30,7 +35,7 @@
     padding: 4.5rem 4.5rem 4.5rem 0;
 
     @media (max-width: 800px) {
-      padding: 2rem 0;
+      padding: 2rem 1rem;
       align-items: center;
     }
   }
