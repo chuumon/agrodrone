@@ -37,7 +37,17 @@ function onFormSubmit(selector) {
 
         const formData = new FormData(form);
 
-        console.log(Object.fromEntries(formData));
+        fetch('./process-form.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+
+        })
+        .catch(error => {
+            
+        });
     })
 }
 
