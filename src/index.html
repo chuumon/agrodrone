@@ -7,18 +7,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="styles/style.scss" rel="stylesheet"/>
   </head>
   <body>
     <header class="header">
+
       <div class="burger">
         <span class="burger__bar"></span>
         <span class="burger__bar"></span>
         <span class="burger__bar"></span>
       </div>
 
-      <img class="header__logo" src="assets/logo.svg">
+      <img class="header__logo" src="assets/logo.svg" alt="Лого">
 
       <div class="header__nav-wrapper">
         <nav class="header__nav">
@@ -29,9 +29,7 @@
         </nav>
 
         <button id="contact-popup-trigger" class="header__nav-button">
-          <svg viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.9648 13.8555L17.1211 17.4062C17.0156 17.9336 16.5938 18.2852 16.0664 18.2852C7.20703 18.25 0 11.043 0 2.18359C0 1.65625 0.316406 1.23438 0.84375 1.12891L4.39453 0.285156C4.88672 0.179688 5.41406 0.460938 5.625 0.917969L7.27734 4.75C7.45312 5.20703 7.34766 5.73438 6.96094 6.01562L5.0625 7.5625C6.25781 9.98828 8.22656 11.957 10.6875 13.1523L12.2344 11.2539C12.5156 10.9023 13.043 10.7617 13.5 10.9375L17.332 12.5898C17.7891 12.8359 18.0703 13.3633 17.9648 13.8555Z" fill="white"/>
-          </svg>
+          <i class="icon-phone"></i>
         </button>
       </div>
     </header>
@@ -44,8 +42,8 @@
         <button class="main__button button button--yellow">Отримати консультацію</button>
       </div>
 
-      <img class="main__drone" src="assets/banner-drone.png" alt="АгроДрон" data-aos="fade-left">
-      <img class="main__drone--mobile" src="assets/banner-drone-mobile.png" alt="АгроДрон">
+      <img class="main__drone" src="assets/banner-drone.webp" alt="АгроДрон" data-aos="fade-left">
+      <img class="main__drone--mobile" src="assets/banner-drone-mobile.webp" alt="АгроДрон">
       <img class="main__bottom" src="assets/banner-bottom.svg">
     </section>
 
@@ -80,12 +78,12 @@
         </div>
       </div>
 
-      <img class="about-us__drone" src="assets/preferences-drone.png" alt="">
-      <img class="about-us__dots" src="assets/preferences-dots.png" alt="">
+      <img class="about-us__drone" src="assets/about-us-drone.webp" alt="">
+      <img class="about-us__drone-bg" src="assets/about-us-drone-bg.webp" alt="">
     </section>
 
     <section id="consultation" class="consultation">
-      <img class="consultation__farmer" src="assets/consultation-farmer.png" alt="" data-aos="fade-right" data-aos-delay="200">
+      <img class="consultation__farmer" src="assets/farmer.webp" alt="" data-aos="fade-right" data-aos-delay="200">
 
       <div class="consultation__form-wrapper" data-aos="zoom-in-up" data-aos-delay="200">
         <h3 class="consultation__title">Потрібна Консультація?</h3>
@@ -115,7 +113,7 @@
 
       <div class="services__cards">
         <div class="services__card" data-aos="flip-left">
-          <img class="services__card-image" src="assets/use-cases-image-1.png" alt="Обприскування полів дронами">
+          <img class="services__card-image" src="assets/use-cases-image-1.webp" alt="Обприскування полів дронами">
           <p class="services__card-title">Обприскування полів дронами</p>
           <p class="services__card-text">Максимально точне внесення засобів захисту рослин.</p>
 
@@ -123,7 +121,7 @@
         </div>
 
         <div class="services__card" data-aos="flip-left">
-          <img class="services__card-image" src="assets/use-cases-image-2.png" alt="Карти Внесення ЗЗР">
+          <img class="services__card-image" src="assets/use-cases-image-2.webp" alt="Карти Внесення ЗЗР">
           <p class="services__card-title">Карти Внесення ЗЗР</p>
           <p class="services__card-text">Внесення засобів захисту рослин (ЗЗР) за допомогою дронів є більш точним порівняно з традиційними способами внесення.</p>
 
@@ -131,7 +129,7 @@
         </div>
 
         <div class="services__card" data-aos="flip-left">
-          <img class="services__card-image" src="assets/use-cases-image-3.png" alt="Десикація рослин">
+          <img class="services__card-image" src="assets/use-cases-image-3.webp" alt="Десикація рослин">
           <p class="services__card-title">Десикація рослин</p>
           <p class="services__card-text">Зробивши десикацію вчасно, ви зберігаєте свій врожай.</p>
 
@@ -139,7 +137,7 @@
         </div>
 
         <div class="services__card" data-aos="flip-left">
-          <img class="services__card-image" src="assets/use-cases-image-4.png" alt="Посів дрібнонасінневих культур">
+          <img class="services__card-image" src="assets/use-cases-image-4.webp" alt="Посів дрібнонасінневих культур">
           <p class="services__card-title">Посів дрібнонасінневих культур</p>
           <p class="services__card-text">Дає змогу боротися з понад 70 видами шкідників і є екологічно чистим видом обробки.</p>
 
@@ -155,9 +153,9 @@
         <div class="footer__contacts contacts">
           <p class="contacts__title">Контактна інформація:</p>
 
-          <a class="contacts__contact" href="tel:+38 066 123 45 67"><img src="assets/phone.svg" alt="Телефон"> +38 066 123 45 67</a>
-          <a class="contacts__contact" href="mailto:service@mail.com"><img src="assets/envelope.svg" alt="Емейл"> service@mail.com</a>
-          <p class="contacts__contact"><img src="assets/map-marker.svg" alt="Адреса"> вулиця Бориса Мозолевського, 15</p>
+          <a class="contacts__contact" href="tel:+38 066 123 45 67"><i class="icon-phone"></i> +38 066 123 45 67</a>
+          <a class="contacts__contact" href="mailto:service@mail.com"><i class="icon-envelope"></i> service@mail.com</a>
+          <p class="contacts__contact"><i class="icon-map-marker"></i> вулиця Бориса Мозолевського, 15</p>
 
           <button class="contacts__button button button--yellow" type="button">Консультація</button>
         </div>
@@ -176,14 +174,14 @@
     </footer>
 
     <div id="contact-popup" class="contact-popup">
-      <a class="contact-popup__tel" href="tel:+38 063 930 07 02"><img src="assets/phone-arrow.svg" alt="Контактний номер"> +38 063 930 07 02</a>
-      <a class="contact-popup__tel" href="tel:+38 067 630 11 19"><img src="assets/phone-arrow.svg" alt="Контактний номер"> +38 067 630 11 19</a>
+      <a class="contact-popup__tel" href="tel:+38 063 930 07 02"><i class="icon-call-outcome"></i> +38 063 930 07 02</a>
+      <a class="contact-popup__tel" href="tel:+38 067 630 11 19"><i class="icon-call-outcome"></i> +38 067 630 11 19</a>
 
       <button class="contact-popup__button" type="button">Замовити дзвінок</button>
     </div>
 
     <div class="burger-menu">
-      <div class="burger-menu__close">✕</div>
+      <button class="burger-menu__close" type="button"><i class="icon-close"></i></button>
 
       <nav class="burger-menu__nav">
         <a class="burger-menu__link" href="#main">Головна</a>
@@ -196,19 +194,14 @@
       <div class="contacts">
         <p class="contacts__title">Контактна інформація:</p>
 
-        <a class="contacts__contact" href="tel:+38 066 123 45 67"><img src="assets/phone.svg" alt="Телефон"> +38 066 123 45 67</a>
-        <a class="contacts__contact" href="mailto:service@mail.com"><img src="assets/envelope.svg" alt="Емейл"> service@mail.com</a>
-        <p class="contacts__contact"><img src="assets/map-marker.svg" alt="Адреса"> вулиця Бориса Мозолевського, 15</p>
+        <a class="contacts__contact" href="tel:+38 066 123 45 67"><i class="icon-phone"></i> +38 066 123 45 67</a>
+        <a class="contacts__contact" href="mailto:service@mail.com"><i class="icon-envelope"></i> service@mail.com</a>
+        <p class="contacts__contact"><i class="icon-map-marker"></i> вулиця Бориса Мозолевського, 15</p>
 
         <button class="contacts__button button button--yellow" type="button">Консультація</button>
       </div>
     </div>
 
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/imask"></script>
-
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" type="module"></script>
   </body>
 </html>

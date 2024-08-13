@@ -7,8 +7,8 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build --public-url ./",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,10 @@
     "@parcel/transformer-sass": "^2.12.0",
     "gh-pages": "^6.1.1",
     "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "imask": "^7.6.1",
+    "tippy.js": "^6.3.7"
   }
 }

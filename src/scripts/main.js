@@ -1,3 +1,9 @@
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import IMask from 'imask';
+
 document.addEventListener("DOMContentLoaded", () => {
     AOS.init();
     initPhoneMask()
