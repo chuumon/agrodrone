@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initPhoneMask() {
-    const telInput = document.getElementById('tel');
+    const phoneInput = document.getElementById('phone');
 
-    const mask = IMask(telInput, {
+    const mask = IMask(phoneInput, {
         mask: '+{38\\0} 00 000 00 00',
         lazy: false,
         placeholderChar: 'X',
     });
 
-    telInput.setCustomValidity('Введіть номер телефону');
+    phoneInput.setCustomValidity('Введіть номер телефону');
 
     mask.on('accept', () => {
-        telInput.setCustomValidity(mask.masked.isComplete ? '' : 'Введіть номер телефону')
+        phoneInput.setCustomValidity(mask.masked.isComplete ? '' : 'Введіть номер телефону')
     });
 
 }
@@ -43,10 +43,10 @@ function onFormSubmit(selector) {
         })
         .then(response => response.text())
         .then(data => {
-
+            console.log(data);
         })
         .catch(error => {
-            
+            console.log(error);
         });
     })
 }
