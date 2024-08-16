@@ -1,5 +1,4 @@
 @import "variables";
-@import "mixins";
 
 .contact-popup {
   display: flex;
@@ -24,12 +23,8 @@
   }
 
   &__button {
-    @include basic-button;
-    background: $green;
-    color: $white;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.5rem !important;
   }
 }

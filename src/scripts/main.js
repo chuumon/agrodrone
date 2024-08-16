@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initPhoneMask()
     onFormSubmit('.consultation__form');
 
-    initContactPopup();
-
-    subscribeOnScroll();
+    initTippy();
 
     initBurger();
 
@@ -40,7 +38,6 @@ function onFormSubmit(selector) {
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-
         const formData = new FormData(form);
 
         fetch('./process-form.php', {
@@ -48,32 +45,62 @@ function onFormSubmit(selector) {
             body: formData
         })
         .then(response => response.text())
-        .then(data => {
-            console.log(data);
+        .then(isSuccess => {
+            showFormSendingStatus(isSuccess);
         })
-        .catch(error => {
-            console.log(error);
+        .catch(() => {
+            showFormSendingStatus(false);
         });
     })
 }
 
-function initContactPopup() {
-    tippy('#contact-popup-trigger', {
-        content: document.getElementById('contact-popup'),
-        interactive: true,
-    });
-}
+function showFormSendingStatus(isSuccess) {
+    const popup = document.querySelector('.form-sent-popup');
+    const header = document.querySelector('.form-sent-popup__title');
+    const message = document.querySelector('.form-sent-popup__message');
+    const icon = document.querySelector('.form-sent-popup__icon');
 
-function subscribeOnScroll() {
-    document.addEventListener('scroll', (e) => {
-        const header = document.querySelector('.header');
+    if(isSuccess) {
+        header.innerText = 'Вашу заявку прийнято!'
+        message.innerText = 'Наш менеджер зв\'яжеться з Вами найближчим часом';
+        icon.classList.add('icon-info');
+    } else {
+        header.innerText = 'Упс, щось пішло не так'
+        message.innerText = 'Спробуйте пізніше або затефонуйте за контакним номером';
+        icon.classList.add('icon-cancel-circle');
+    }
 
-        if (window.scrollY > 10) {
-            header.classList.add('header--contrast')
-        } else {
-            header.classList.remove('header--contrast')
+    document.body.classList.add('lock-scroll');
+    popup.classList.add('form-sent-popup--visible');
+    popup.showModal();
+
+    popup.addEventListener('click', (event) => {
+        const rect = popup.getBoundingClientRect();
+        const isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+            rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+
+        if (!isInDialog || event.target.classList.contains('form-sent-popup__close')) {
+            popup.classList.add('close');
+
+            setTimeout(() => {
+                popup.close()
+                popup.classList.remove('close');
+                document.body.classList.remove('lock-scroll');
+            }, 500);
         }
     })
+}
+
+function initTippy() {
+    const template = document.getElementById('contact-popup');
+
+    tippy('#contact-popup-trigger', {
+        content: template,
+        interactive: true,
+        onShown: () => {
+            listenAnchorClick(document.querySelector('.contact-popup__button'));
+        },
+    });
 }
 
 function initBurger() {
@@ -99,20 +126,24 @@ function initBurger() {
 }
 
 function initNav() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        listenAnchorClick(anchor);
+    });
+}
+
+function listenAnchorClick(anchor) {
     const headerOffset = 96;
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-            const section = document.querySelector(this.getAttribute('href'));
-            const sectionPosition = section.getBoundingClientRect().top;
-            const offsetPosition = sectionPosition + window.scrollY - headerOffset;
+        const section = document.querySelector(this.getAttribute('href'));
+        const sectionPosition = section.getBoundingClientRect().top;
+        const sectionOffset = parseInt(section.getAttribute('data-scroll-offset') ?? 0);
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+        window.scrollTo({
+            top: sectionPosition + window.scrollY - headerOffset - sectionOffset,
+            behavior: "smooth"
         });
     });
 }

@@ -1,0 +1,76 @@
+@import "variables";
+
+@keyframes popUPAnim {
+  0% { transform : scale(0);   }
+  80% { transform : scale(1.1); }
+  100% { transform : scale(1);   }
+}
+@keyframes popOutAnim{
+  0% { transform : scale(1);   }
+  20% { transform : scale(1.1); }
+  100% { transform : scale(0);   }
+}
+
+.form-sent-popup {
+  position: fixed;
+  z-index: 10000;
+  margin: auto;
+  background-color: $white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: none;
+  box-shadow: 0 0 16px 0 #00000014;
+
+  &[open] {
+    animation: popUPAnim 700ms forwards;
+  }
+
+  &.close {
+    animation: popOutAnim 700ms forwards;
+  }
+
+  &::backdrop {
+    background: rgba(35, 35, 35, 0.4);
+  }
+
+  &--visible {
+    display: block;
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__close {
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .icon-close {
+      pointer-events: none;
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
+
+    &.icon-info {
+      color: $green;
+    }
+
+    &.icon-cancel-circle {
+      color: firebrick;
+    }
+  }
+}

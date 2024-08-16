@@ -1,14 +1,15 @@
 @import "normalize";
 
 @import "fonts";
+@import "contact-popup";
+@import "burger-menu";
+@import "form-sent-popup";
 @import "header";
 @import "main";
 @import "about-us";
 @import "consultation";
 @import "services";
 @import "footer";
-@import "contact-popup";
-@import "burger-menu";
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -80,6 +81,10 @@ h3 {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .button {
   font-size: $button-font-size;
   border-radius: $button-radius;
@@ -89,6 +94,7 @@ h3 {
   outline: none;
   cursor: pointer;
   transition: all 100ms ease-in-out;
+  text-align: center;
 
   &--yellow {
     background-color: $yellow;
@@ -121,7 +127,7 @@ h3 {
   transition: all 100ms ease-in-out;
 
   &:focus {
-    border: 2px solid $yellow3;
+    border: 2px solid $yellow4;
   }
 }
 

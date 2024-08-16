@@ -13,6 +13,7 @@
   background-color: rgba(35, 35, 35, 0.4);
   padding: 1.5rem 4.5rem;
   transition: 500ms;
+  backdrop-filter: blur(10px);
 
   @media (max-width: 900px) {
     padding-left: 3rem;
@@ -22,10 +23,6 @@
   @media (max-width: 550px) {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  &--contrast {
-    backdrop-filter: blur(10px);
   }
 
   &__logo {
