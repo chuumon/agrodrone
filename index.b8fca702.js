@@ -597,21 +597,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
     (0, _aosDefault.default).init();
     initPhoneMask();
     onFormSubmit(".consultation__form");
-    initContactPopup();
-    subscribeOnScroll();
+    initTippy();
     initBurger();
     initNav();
 });
 function initPhoneMask() {
-    const telInput = document.getElementById("tel");
-    const mask = (0, _imaskDefault.default)(telInput, {
+    const phoneInput = document.getElementById("phone");
+    const mask = (0, _imaskDefault.default)(phoneInput, {
         mask: "+{38\\0} 00 000 00 00",
         lazy: false,
         placeholderChar: "X"
     });
-    telInput.setCustomValidity("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443");
+    phoneInput.setCustomValidity("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443");
     mask.on("accept", ()=>{
-        telInput.setCustomValidity(mask.masked.isComplete ? "" : "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443");
+        phoneInput.setCustomValidity(mask.masked.isComplete ? "" : "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443");
     });
 }
 function onFormSubmit(selector) {
@@ -622,20 +621,51 @@ function onFormSubmit(selector) {
         fetch("./process-form.php", {
             method: "POST",
             body: formData
-        }).then((response)=>response.text()).then((data)=>{}).catch((error)=>{});
+        }).then((response)=>response.text()).then((isSuccess)=>{
+            showFormSendingStatus(isSuccess);
+        }).catch(()=>{
+            showFormSendingStatus(false);
+        });
     });
 }
-function initContactPopup() {
+function showFormSendingStatus(isSuccess) {
+    const popup = document.querySelector(".form-sent-popup");
+    const header = document.querySelector(".form-sent-popup__title");
+    const message = document.querySelector(".form-sent-popup__message");
+    const icon = document.querySelector(".form-sent-popup__icon");
+    if (isSuccess) {
+        header.innerText = "\u0412\u0430\u0448\u0443 \u0437\u0430\u044F\u0432\u043A\u0443 \u043F\u0440\u0438\u0439\u043D\u044F\u0442\u043E!";
+        message.innerText = "\u041D\u0430\u0448 \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440 \u0437\u0432'\u044F\u0436\u0435\u0442\u044C\u0441\u044F \u0437 \u0412\u0430\u043C\u0438 \u043D\u0430\u0439\u0431\u043B\u0438\u0436\u0447\u0438\u043C \u0447\u0430\u0441\u043E\u043C";
+        icon.classList.add("icon-info");
+    } else {
+        header.innerText = "\u0423\u043F\u0441, \u0449\u043E\u0441\u044C \u043F\u0456\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A";
+        message.innerText = "\u0421\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043F\u0456\u0437\u043D\u0456\u0448\u0435 \u0430\u0431\u043E \u0437\u0430\u0442\u0435\u0444\u043E\u043D\u0443\u0439\u0442\u0435 \u0437\u0430 \u043A\u043E\u043D\u0442\u0430\u043A\u043D\u0438\u043C \u043D\u043E\u043C\u0435\u0440\u043E\u043C";
+        icon.classList.add("icon-cancel-circle");
+    }
+    document.body.classList.add("lock-scroll");
+    popup.classList.add("form-sent-popup--visible");
+    popup.showModal();
+    popup.addEventListener("click", (event)=>{
+        const rect = popup.getBoundingClientRect();
+        const isInDialog = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+        if (!isInDialog || event.target.classList.contains("form-sent-popup__close")) {
+            popup.classList.add("close");
+            setTimeout(()=>{
+                popup.close();
+                popup.classList.remove("close");
+                document.body.classList.remove("lock-scroll");
+            }, 500);
+        }
+    });
+}
+function initTippy() {
+    const template = document.getElementById("contact-popup");
     (0, _tippyJsDefault.default)("#contact-popup-trigger", {
-        content: document.getElementById("contact-popup"),
-        interactive: true
-    });
-}
-function subscribeOnScroll() {
-    document.addEventListener("scroll", (e)=>{
-        const header = document.querySelector(".header");
-        if (window.scrollY > 10) header.classList.add("header--contrast");
-        else header.classList.remove("header--contrast");
+        content: template,
+        interactive: true,
+        onShown: ()=>{
+            listenAnchorClick(document.querySelector(".contact-popup__button"));
+        }
     });
 }
 function initBurger() {
@@ -657,17 +687,20 @@ function initBurger() {
     });
 }
 function initNav() {
-    const headerOffset = 96;
     document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
-        anchor.addEventListener("click", function(e) {
-            e.preventDefault();
-            const section = document.querySelector(this.getAttribute("href"));
-            const sectionPosition = section.getBoundingClientRect().top;
-            const offsetPosition = sectionPosition + window.scrollY - headerOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+        listenAnchorClick(anchor);
+    });
+}
+function listenAnchorClick(anchor) {
+    const headerOffset = 96;
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute("href"));
+        const sectionPosition = section.getBoundingClientRect().top;
+        const sectionOffset = parseInt(section.getAttribute("data-scroll-offset") ?? 0);
+        window.scrollTo({
+            top: sectionPosition + window.scrollY - headerOffset - sectionOffset,
+            behavior: "smooth"
         });
     });
 }
