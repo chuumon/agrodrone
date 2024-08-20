@@ -615,9 +615,12 @@ function initPhoneMask() {
 }
 function onFormSubmit(selector) {
     const form = document.querySelector(selector);
+    const sendButton = document.querySelector("#send-form");
     form.addEventListener("submit", (event)=>{
         event.preventDefault();
         const formData = new FormData(form);
+        sendButton.setAttribute("disabled", true);
+        sendButton.classList.add("loading");
         fetch("./process-form.php", {
             method: "POST",
             body: formData
@@ -633,6 +636,7 @@ function showFormSendingStatus(isSuccess) {
     const header = document.querySelector(".form-sent-popup__title");
     const message = document.querySelector(".form-sent-popup__message");
     const icon = document.querySelector(".form-sent-popup__icon");
+    const sendButton = document.querySelector("#send-form");
     if (isSuccess) {
         header.innerText = "\u0412\u0430\u0448\u0443 \u0437\u0430\u044F\u0432\u043A\u0443 \u043F\u0440\u0438\u0439\u043D\u044F\u0442\u043E!";
         message.innerText = "\u041D\u0430\u0448 \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440 \u0437\u0432'\u044F\u0436\u0435\u0442\u044C\u0441\u044F \u0437 \u0412\u0430\u043C\u0438 \u043D\u0430\u0439\u0431\u043B\u0438\u0436\u0447\u0438\u043C \u0447\u0430\u0441\u043E\u043C";
@@ -645,6 +649,8 @@ function showFormSendingStatus(isSuccess) {
     document.body.classList.add("lock-scroll");
     popup.classList.add("form-sent-popup--visible");
     popup.showModal();
+    sendButton.removeAttribute("disabled");
+    sendButton.classList.remove("loading");
     popup.addEventListener("click", (event)=>{
         const rect = popup.getBoundingClientRect();
         const isInDialog = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
@@ -653,6 +659,7 @@ function showFormSendingStatus(isSuccess) {
             setTimeout(()=>{
                 popup.close();
                 popup.classList.remove("close");
+                popup.classList.remove("form-sent-popup--visible");
                 document.body.classList.remove("lock-scroll");
             }, 500);
         }

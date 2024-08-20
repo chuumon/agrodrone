@@ -237,6 +237,16 @@ template, [hidden] {
   src: url("icomoon.b0ded54e.ttf") format("truetype");
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 [class^="icon-"], [class*=" icon-"] {
   speak: never;
   font-variant: normal;
@@ -254,15 +264,15 @@ template, [hidden] {
 }
 
 .icon-envelope:before {
-  content: "";
-}
-
-.icon-map-marker:before {
   content: "";
 }
 
-.icon-phone:before {
+.icon-map-marker:before {
   content: "";
+}
+
+.icon-phone:before {
+  content: "";
 }
 
 .icon-call-outcome:before {
@@ -282,6 +292,15 @@ template, [hidden] {
 
 .icon-cancel-circle:before {
   content: "";
+}
+
+.icon-spinner:before {
+  content: "";
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: inline-block;
 }
 
 .contact-popup {
@@ -1363,14 +1382,30 @@ a {
 
 .button {
   cursor: pointer;
-  text-align: center;
   border: none;
   border-radius: 1rem;
   outline: none;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   padding: 1rem 2rem;
   font-size: 1.125rem;
   font-weight: 600;
   transition: all .1s ease-in-out;
+  display: inline-flex;
+}
+
+.button:disabled {
+  opacity: .6;
+  pointer-events: none;
+}
+
+.button.loading .icon-spinner {
+  display: inline;
+}
+
+.button > .icon-spinner {
+  display: none;
 }
 
 .button--yellow {
@@ -1424,6 +1459,10 @@ a {
   gap: .5rem;
   text-decoration: none;
   display: flex;
+}
+
+.contacts__contact i {
+  font-size: 1.2rem;
 }
 
 .contacts__button {
