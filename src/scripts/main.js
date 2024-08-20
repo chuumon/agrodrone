@@ -35,10 +35,14 @@ function initPhoneMask() {
 
 function onFormSubmit(selector) {
     const form = document.querySelector(selector);
+    const sendButton = document.querySelector('#send-form');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const formData = new FormData(form);
+
+        sendButton.setAttribute('disabled', true);
+        sendButton.classList.add('loading');
 
         fetch('./process-form.php', {
             method: 'POST',
@@ -59,6 +63,7 @@ function showFormSendingStatus(isSuccess) {
     const header = document.querySelector('.form-sent-popup__title');
     const message = document.querySelector('.form-sent-popup__message');
     const icon = document.querySelector('.form-sent-popup__icon');
+    const sendButton = document.querySelector('#send-form');
 
     if(isSuccess) {
         header.innerText = 'Вашу заявку прийнято!'
@@ -73,6 +78,8 @@ function showFormSendingStatus(isSuccess) {
     document.body.classList.add('lock-scroll');
     popup.classList.add('form-sent-popup--visible');
     popup.showModal();
+    sendButton.removeAttribute('disabled');
+    sendButton.classList.remove('loading');
 
     popup.addEventListener('click', (event) => {
         const rect = popup.getBoundingClientRect();
@@ -83,8 +90,9 @@ function showFormSendingStatus(isSuccess) {
             popup.classList.add('close');
 
             setTimeout(() => {
-                popup.close()
+                popup.close();
                 popup.classList.remove('close');
+                popup.classList.remove('form-sent-popup--visible');
                 document.body.classList.remove('lock-scroll');
             }, 500);
         }

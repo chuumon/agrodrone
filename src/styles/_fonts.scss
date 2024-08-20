@@ -52,6 +52,15 @@
   src: url('../assets/fonts/icomoon.ttf') format('truetype');
 }
 
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon', serif !important;
   speak: never;
@@ -69,15 +78,15 @@
 }
 
 .icon-envelope:before {
-  content: "\e901";
-}
-
-.icon-map-marker:before {
   content: "\e902";
 }
 
-.icon-phone:before {
+.icon-map-marker:before {
   content: "\e903";
+}
+
+.icon-phone:before {
+  content: "\e901";
 }
 
 .icon-call-outcome:before {
@@ -99,3 +108,11 @@
   content: "\ea0d";
 }
 
+.icon-spinner:before {
+  content: "\e981";
+  display: inline-block;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
