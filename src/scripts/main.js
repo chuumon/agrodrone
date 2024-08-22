@@ -6,8 +6,10 @@ import IMask from 'imask';
 
 document.addEventListener("DOMContentLoaded", () => {
     AOS.init();
-    initPhoneMask()
-    onFormSubmit('.consultation__form');
+
+    const mask = initPhoneMask();
+
+    onFormSubmit(mask);
 
     initTippy();
 
@@ -31,10 +33,11 @@ function initPhoneMask() {
         phoneInput.setCustomValidity(mask.masked.isComplete ? '' : 'Введіть номер телефону')
     });
 
+    return mask;
 }
 
-function onFormSubmit(selector) {
-    const form = document.querySelector(selector);
+function onFormSubmit(mask) {
+    const form = document.querySelector('.consultation__form');
     const sendButton = document.querySelector('#send-form');
 
     form.addEventListener('submit', (event) => {
@@ -55,6 +58,11 @@ function onFormSubmit(selector) {
         .catch(() => {
             showFormSendingStatus(false);
         });
+
+
+
+        form.reset();
+        mask.value = '';
     })
 }
 
