@@ -39,12 +39,8 @@
   @media (max-width: 550px) {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  @media (max-width: 550px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-position: -180px -25px;
+    background-position: 0 0;
+    background-image: url("../assets/banner-mobile.webp");
   }
 
   &__info {
