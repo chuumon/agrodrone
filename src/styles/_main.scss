@@ -1,12 +1,9 @@
 @import "variables";
 
 .main {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   height: 990px;
   position: relative;
-  padding: 10.5rem 4.5rem 0 4.5rem;
+  padding-top: 10.5rem;
   width: 100%;
   background-image: url("../assets/banner.webp");
   background-size: cover;
@@ -25,11 +22,6 @@
     height: 970px;
   }
 
-  @media (max-width: 900px) {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   @media (max-width: 700px) {
     height: 800px;
     padding-top: 8.75rem;
@@ -37,15 +29,11 @@
   }
 
   @media (max-width: 550px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
     background-position: 0 0;
     background-image: url("../assets/banner-mobile.webp");
   }
 
   &__info {
-    width: 90%;
-
     @media (max-width: 700px) {
       width: 100%;
       text-align: center;

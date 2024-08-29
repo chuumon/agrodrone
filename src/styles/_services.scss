@@ -1,21 +1,8 @@
 @import "variables";
 
 .services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: $black;
-  padding: 4.5rem 6.5rem;
-
-  @media (max-width: 800px) {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  @media (max-width: 550px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  padding: 4.5rem 0;
 
   $use-cases: &;
 
@@ -45,6 +32,8 @@
 
     @media (min-width: 1600px) {
       width: 80%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

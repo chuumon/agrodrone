@@ -1,9 +1,6 @@
 @import "variables";
 
 .consultation {
-  padding: 2rem 5rem 5rem 5rem;
-  display: flex;
-  flex-direction: row;
   background: $yellow;
   position: relative;
 
@@ -37,6 +34,11 @@
     position: absolute;
     background-image: url("../assets/consultation-filter.svg");
     background-size: cover;
+  }
+
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
   }
 
   &__farmer {

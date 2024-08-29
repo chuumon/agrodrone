@@ -12,35 +12,38 @@
   </head>
   <body>
     <header class="header">
+      <div class="container">
+        <div class="burger">
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </div>
 
-      <div class="burger">
-        <span class="burger__bar"></span>
-        <span class="burger__bar"></span>
-        <span class="burger__bar"></span>
-      </div>
+        <img loading="lazy" class="header__logo" src="assets/logo.svg" alt="Лого">
 
-      <img loading="lazy" class="header__logo" src="assets/logo.svg" alt="Лого">
+        <div class="header__nav-wrapper">
+          <nav class="header__nav">
+            <a class="header__nav-link" href="#main">Головна</a>
+            <a class="header__nav-link" href="#about-us">Про нас</a>
+            <a class="header__nav-link" href="#services">Послуги</a>
+            <a class="header__nav-link" href="#contacts">Контакти</a>
+          </nav>
 
-      <div class="header__nav-wrapper">
-        <nav class="header__nav">
-          <a class="header__nav-link" href="#main">Головна</a>
-          <a class="header__nav-link" href="#about-us">Про нас</a>
-          <a class="header__nav-link" href="#services">Послуги</a>
-          <a class="header__nav-link" href="#contacts">Контакти</a>
-        </nav>
-
-        <button id="contact-popup-trigger" class="header__nav-button" aria-label="Замовити звінок">
-          <i class="icon-phone"></i>
-        </button>
+          <button id="contact-popup-trigger" class="header__nav-button" aria-label="Замовити звінок">
+            <i class="icon-phone"></i>
+          </button>
+        </div>
       </div>
     </header>
 
     <section id="main" class="main">
-      <div class="main__info" data-aos="fade-up">
-        <h1 class="main__title">Збільшуйте свою продуктивність за допомогою агродронів</h1>
-        <p class="main__subtitle">Купуйте дрон у нас - отримайте і дрон, <br/> і наш досвід</p>
+      <div class="container">
+        <div class="main__info" data-aos="fade-up">
+          <h1 class="main__title">Збільшуйте свою продуктивність <br/> за допомогою агродронів</h1>
+          <p class="main__subtitle">Купуйте дрон у нас - отримайте і дрон, <br/> і наш досвід</p>
 
-        <a href="#consultation" class="main__button button button--yellow">Отримати консультацію</a>
+          <a href="#consultation" class="main__button button button--yellow">Отримати консультацію</a>
+        </div>
       </div>
 
       <img loading="lazy" class="main__drone" src="assets/banner-drone.webp" alt="АгроДрон" data-aos="fade-left">
@@ -49,130 +52,138 @@
     </section>
 
     <section id="about-us" class="about-us">
-      <h2 class="about-us__title" data-aos="fade-up">Скорочуємо витрати, зберігаємо врожай, підвищуємо дохідність з кожного гектара</h2>
-      <p class="about-us__subtitle" data-aos="fade-up">Використовуючи наш 5-річний досвід і революційні технології, ми пропонуємо безпечні та стійкі екологічні рішення, здатні забезпечувати конкурентно кращі результати, з економією ваших активів та часу.</p>
+      <div class="container">
+        <h2 class="about-us__title" data-aos="fade-up">Скорочуємо витрати, зберігаємо врожай, підвищуємо дохідність з кожного гектара</h2>
+        <p class="about-us__subtitle" data-aos="fade-up">Використовуючи наш 5-річний досвід і революційні технології, ми пропонуємо безпечні та стійкі екологічні рішення, здатні забезпечувати конкурентно кращі результати, з економією ваших активів та часу.</p>
 
-      <div class="about-us__cards">
-        <div class="about-us__cards-row">
-          <div class="about-us__card" data-aos="flip-left" data-aos-delay="200">
-            <div class="about-us__card-title">5</div>
-            <div class="about-us__card-hint">Років обробляємо поля агродронами</div>
+        <div class="about-us__cards">
+          <div class="about-us__cards-row">
+            <div class="about-us__card" data-aos="flip-left" data-aos-delay="200">
+              <div class="about-us__card-title">5</div>
+              <div class="about-us__card-hint">Років обробляємо поля агродронами</div>
+            </div>
+
+            <div class="about-us__card" data-aos="flip-left" data-aos-delay="200">
+              <div class="about-us__card-title">25</div>
+              <div class="about-us__card-hint">Екіпажів в наявності</div>
+            </div>
           </div>
 
-          <div class="about-us__card" data-aos="flip-left" data-aos-delay="200">
-            <div class="about-us__card-title">25</div>
-            <div class="about-us__card-hint">Екіпажів в наявності</div>
+          <div class="about-us__cards-row">
+            <div class="about-us__card" data-aos="flip-right" data-aos-delay="200">
+              <div class="about-us__card-title">3 000</div>
+              <div class="about-us__card-hint">Гектарів можемо обробити
+                за день</div>
+            </div>
+
+            <div class="about-us__card" data-aos="flip-right" data-aos-delay="200">
+              <div class="about-us__card-title">130 000</div>
+              <div class="about-us__card-hint">Гектарів обробляємо щорічно</div>
+            </div>
           </div>
         </div>
 
-        <div class="about-us__cards-row">
-          <div class="about-us__card" data-aos="flip-right" data-aos-delay="200">
-            <div class="about-us__card-title">3 000</div>
-            <div class="about-us__card-hint">Гектарів можемо обробити
-              за день</div>
-          </div>
-
-          <div class="about-us__card" data-aos="flip-right" data-aos-delay="200">
-            <div class="about-us__card-title">130 000</div>
-            <div class="about-us__card-hint">Гектарів обробляємо щорічно</div>
-          </div>
-        </div>
+        <img loading="lazy" class="about-us__drone" src="assets/about-us-drone.webp" alt="">
+        <img loading="lazy" class="about-us__drone-bg" src="assets/about-us-drone-bg.webp" alt="">
       </div>
-
-      <img loading="lazy" class="about-us__drone" src="assets/about-us-drone.webp" alt="">
-      <img loading="lazy" class="about-us__drone-bg" src="assets/about-us-drone-bg.webp" alt="">
     </section>
 
     <section id="consultation" class="consultation" data-scroll-offset="60">
-      <img loading="lazy" class="consultation__farmer" src="assets/farmer.webp" alt="" data-aos="fade-right" data-aos-delay="200">
+      <div class="container">
+        <img loading="lazy" class="consultation__farmer" src="assets/farmer.webp" alt="" data-aos="fade-right" data-aos-delay="200">
 
-      <div class="consultation__form-wrapper" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="consultation__title">Потрібна Консультація?</h3>
-        <p class="consultation__subtitle">Заповніть форму та наш консультант зв’яжеться з вами протягом години.</p>
+        <div class="consultation__form-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="consultation__title">Потрібна Консультація?</h3>
+          <p class="consultation__subtitle">Заповніть форму та наш консультант зв’яжеться з вами протягом години.</p>
 
-        <form class="consultation__form">
-          <div class="consultation__fields">
-            <div class="consultation__field">
-              <label class="consultation__label" for="name">Ім'я:</label>
-              <input class="consultation__input input" name="name" id="name" type="text" maxlength="50" placeholder="Введіть Ваше ім'я" required>
+          <form class="consultation__form">
+            <div class="consultation__fields">
+              <div class="consultation__field">
+                <label class="consultation__label" for="name">Ім'я:</label>
+                <input class="consultation__input input" name="name" id="name" type="text" maxlength="50" placeholder="Введіть Ваше ім'я" required>
+              </div>
+
+              <div class="consultation__field">
+                <label class="consultation__label" for="phone">Номер телефону:</label>
+                <input class="consultation__input input" name="phone" id="phone" type="text" required>
+              </div>
             </div>
 
-            <div class="consultation__field">
-              <label class="consultation__label" for="phone">Номер телефону:</label>
-              <input class="consultation__input input" name="phone" id="phone" type="text" required>
-            </div>
-          </div>
-
-          <button id="send-form" class="consultation__button button button--green" type="submit"><i class="icon-spinner"></i> Отримати консультацію</button>
-        </form>
+            <button id="send-form" class="consultation__button button button--green" type="submit"><i class="icon-spinner"></i> Отримати консультацію</button>
+          </form>
+        </div>
       </div>
     </section>
 
     <section id="services" class="services">
-      <h2 class="services__title" data-aos="fade-up">Продаж <span class="highlighted">дронів</span> аграрного призначення</h2>
-      <p class="services__subtitle" data-aos="fade-up">Наші дрони виготовлені з авіаційного алюмінію, вуглецевого волокна і частково з карбону. Всі матеріали роблять дрон легким та мобільним. </p>
+      <div class="container">
+        <h2 class="services__title" data-aos="fade-up">Продаж <span class="highlighted">дронів</span> аграрного призначення</h2>
+        <p class="services__subtitle" data-aos="fade-up">Наші дрони виготовлені з авіаційного алюмінію, вуглецевого волокна і частково з карбону. Всі матеріали роблять дрон легким та мобільним. </p>
 
-      <div class="services__cards">
-        <div class="services__card" data-aos="flip-left">
-          <img loading="lazy" class="services__card-image" src="assets/service-1.webp" alt="Обприскування полів дронами">
-          <p class="services__card-title">Обприскування полів дронами</p>
-          <p class="services__card-text">Максимально точне внесення засобів захисту рослин.</p>
+        <div class="services__cards">
+          <div class="services__card" data-aos="flip-left">
+            <img loading="lazy" class="services__card-image" src="assets/service-1.webp" alt="Обприскування полів дронами">
+            <p class="services__card-title">Обприскування полів дронами</p>
+            <p class="services__card-text">Максимально точне внесення засобів захисту рослин.</p>
 
-          <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
-        </div>
+            <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
+          </div>
 
-        <div class="services__card" data-aos="flip-left">
-          <img loading="lazy" class="services__card-image" src="assets/service-2.webp" alt="Карти Внесення ЗЗР">
-          <p class="services__card-title">Карти Внесення ЗЗР</p>
-          <p class="services__card-text">Внесення засобів захисту рослин (ЗЗР) за допомогою дронів є більш точним порівняно з традиційними способами внесення.</p>
+          <div class="services__card" data-aos="flip-left">
+            <img loading="lazy" class="services__card-image" src="assets/service-2.webp" alt="Карти Внесення ЗЗР">
+            <p class="services__card-title">Карти Внесення ЗЗР</p>
+            <p class="services__card-text">Внесення засобів захисту рослин (ЗЗР) за допомогою дронів є більш точним порівняно з традиційними способами внесення.</p>
 
-          <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
-        </div>
+            <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
+          </div>
 
-        <div class="services__card" data-aos="flip-left">
-          <img loading="lazy" class="services__card-image" src="assets/service-3.webp" alt="Десикація рослин">
-          <p class="services__card-title">Десикація рослин</p>
-          <p class="services__card-text">Зробивши десикацію вчасно, ви зберігаєте свій врожай.</p>
+          <div class="services__card" data-aos="flip-left">
+            <img loading="lazy" class="services__card-image" src="assets/service-3.webp" alt="Десикація рослин">
+            <p class="services__card-title">Десикація рослин</p>
+            <p class="services__card-text">Зробивши десикацію вчасно, ви зберігаєте свій врожай.</p>
 
-          <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
-        </div>
+            <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
+          </div>
 
-        <div class="services__card" data-aos="flip-left">
-          <img loading="lazy" class="services__card-image" src="assets/service-4.webp" alt="Посів дрібнонасінневих культур">
-          <p class="services__card-title">Посів дрібнонасінневих культур</p>
-          <p class="services__card-text">Дає змогу боротися з понад 70 видами шкідників і є екологічно чистим видом обробки.</p>
+          <div class="services__card" data-aos="flip-left">
+            <img loading="lazy" class="services__card-image" src="assets/service-4.webp" alt="Посів дрібнонасінневих культур">
+            <p class="services__card-title">Посів дрібнонасінневих культур</p>
+            <p class="services__card-text">Дає змогу боротися з понад 70 видами шкідників і є екологічно чистим видом обробки.</p>
 
-          <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
+            <a href="#consultation" class="services__card-button button button--yellow">Консультація</a>
+          </div>
         </div>
       </div>
     </section>
 
     <footer id="contacts" class="footer">
-      <div class="footer__info">
-        <img loading="lazy" class="footer__logo" src="assets/logo.svg" alt="ДронАгроСкай">
+      <div class="container">
+        <div class="footer__info">
+          <img loading="lazy" class="footer__logo" src="assets/logo.svg" alt="ДронАгроСкай">
 
-        <div class="footer__contacts contacts">
-          <p class="contacts__title">Контактна інформація:</p>
+          <div class="footer__contacts contacts">
+            <p class="contacts__title">Контактна інформація:</p>
 
-          <a class="contacts__contact" href="tel:+380994046711"><i class="icon-phone"></i> +38 099 404 67 11</a>
-          <a class="contacts__contact" href="tel:+380972447546"><i class="icon-phone"></i> +38 097 244 75 46</a>
-          <a class="contacts__contact" href="mailto:dronagroskyua@gmail.com"><i class="icon-envelope"></i> dronagroskyua@gmail.com</a>
-          <p class="contacts__contact"><i class="icon-map-marker"></i> Київ, бульвар Вацлава Гавала 8</p>
+            <a class="contacts__contact" href="tel:+380994046711"><i class="icon-phone"></i> +38 099 404 67 11</a>
+            <a class="contacts__contact" href="tel:+380972447546"><i class="icon-phone"></i> +38 097 244 75 46</a>
+            <a class="contacts__contact" href="mailto:dronagroskyua@gmail.com"><i class="icon-envelope"></i> dronagroskyua@gmail.com</a>
+            <p class="contacts__contact"><i class="icon-map-marker"></i> Київ, бульвар Вацлава Гавала 8</p>
 
-          <a href="#consultation" class="contacts__button button button--yellow">Консультація</a>
+            <a href="#consultation" class="contacts__button button button--yellow">Консультація</a>
+          </div>
         </div>
-      </div>
 
-      <div class="footer__map">
-        <iframe
-          class="footer__map-iframe"
-          title="Карта"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.6518134864705!2d30.41263131667175!3d50.447585862992845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc6c94dafcf5%3A0x77f7d14bf48081f4!2sVatslava%20Havela%20Blvd%2C%208%2C%20Kyiv%2C%2003680!5e0!3m2!1sen!2sua!4v1724161355115!5m2!1sen!2sua"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div class="footer__map">
+          <iframe
+            class="footer__map-iframe"
+            title="Карта"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.6518134864705!2d30.41263131667175!3d50.447585862992845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc6c94dafcf5%3A0x77f7d14bf48081f4!2sVatslava%20Havela%20Blvd%2C%208%2C%20Kyiv%2C%2003680!5e0!3m2!1sen!2sua!4v1724161355115!5m2!1sen!2sua"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </footer>
 
@@ -184,13 +195,13 @@
     </div>
 
     <div class="burger-menu">
-      <button class="burger-menu__close" type="button"><i class="icon-close"></i></button>
+      <button class="burger-menu__close" type="button" data-close><i class="icon-close"></i></button>
 
       <nav class="burger-menu__nav">
-        <a class="burger-menu__link" href="#main">Головна</a>
-        <a class="burger-menu__link" href="#about-us">Про нас</a>
-        <a class="burger-menu__link" href="#services">Послуги</a>
-        <a class="burger-menu__link" href="#contacts">Контакти</a>
+        <a class="burger-menu__link" data-close href="#main">Головна</a>
+        <a class="burger-menu__link" data-close href="#about-us">Про нас</a>
+        <a class="burger-menu__link" data-close href="#services">Послуги</a>
+        <a class="burger-menu__link" data-close href="#contacts">Контакти</a>
       </nav>
 
 
@@ -202,7 +213,7 @@
         <a class="contacts__contact" href="mailto:dronagroskyua@gmail.com"><i class="icon-envelope"></i> dronagroskyua@gmail.com</a>
         <p class="contacts__contact"><i class="icon-map-marker"></i> Київ, бульвар Вацлава Гавала 8</p>
 
-        <a href="#consultation" class="contacts__button button button--yellow">Консультація</a>
+        <a href="#consultation" data-close class="contacts__button button button--yellow">Консультація</a>
       </div>
     </div>
 

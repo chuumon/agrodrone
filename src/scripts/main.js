@@ -122,10 +122,7 @@ function initTippy() {
 function initBurger() {
     const menuBtn = document.querySelector('.burger');
     const menu = document.querySelector('.burger-menu');
-    const closeTriggers = [
-        ...Array.from(document.querySelectorAll('.burger-menu__link')),
-        document.querySelector('.burger-menu__close')
-    ];
+    const closeTriggers = Array.from(menu.querySelectorAll('[data-close]'));
 
     menuBtn.addEventListener('click', function() {
         menu.classList.add('burger-menu--active');

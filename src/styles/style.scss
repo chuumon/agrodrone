@@ -175,3 +175,15 @@ a {
     width: 17.5rem;
   }
 }
+
+.container {
+  position: relative;
+  max-width: 1440px;
+  padding: 0 4.5rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 550px) {
+    padding: 0 1rem;
+  }
+}
